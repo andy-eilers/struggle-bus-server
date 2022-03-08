@@ -1,0 +1,79 @@
+[
+    {
+        "model": "strugglebus.struggle",
+        "pk": 1,
+        "fields": {
+            "label": "Anxiety/Worry"
+        }
+    },
+    {
+        "model": "strugglebus.struggle",
+        "pk": 2,
+        "fields": {
+            "label": "Tired"
+        }
+    },
+    {
+        "model": "strugglebus.struggle",
+        "pk": 3,
+        "fields": {
+            "label": "Hangover"
+        }
+    },
+    {
+        "model": "strugglebus.struggle",
+        "pk": 4,
+        "fields": {
+            "label": "Need Motivation"
+        }
+    },
+    {
+        "model": "strugglebus.struggle",
+        "pk": 5,
+        "fields": {
+            "label": "Feeling Lost"
+        }
+    },
+    {
+        "model": "strugglebus.struggle",
+        "pk": 6,
+        "fields": {
+            "label": "Too Much To Do"
+        }
+    },
+    {
+        "model": "strugglebus.struggle",
+        "pk": 7,
+        "fields": {
+            "label": "Can't Sleep"
+        }
+    },
+    {
+        "model": "strugglebus.struggle",
+        "pk": 8,
+        "fields": {
+            "label": "Partner/Kids Making Me Mad"
+        }
+    },
+    {
+        "model": "strugglebus.struggle",
+        "pk": 9,
+        "fields": {
+            "label": "Other Drivers"
+        }
+    },
+    {
+        "model": "strugglebus.struggle",
+        "pk": 10,
+        "fields": {
+            "label": "Need A Vacation"
+        }
+    },
+    {
+        "model": "strugglebus.struggle",
+        "pk": 11,
+        "fields": {
+            "label": "Need More Money"
+        }
+    }
+]

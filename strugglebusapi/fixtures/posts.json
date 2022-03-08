@@ -1,0 +1,11 @@
+[
+    {
+        "model": "strugglebus.post",
+        "pk": 1,
+        "fields": {
+            "bus": 5,
+            "description": "Have you watched the news lately!?!",
+            "date": "2022-03-08"
+        }
+    }
+]
