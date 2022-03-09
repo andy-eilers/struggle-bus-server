@@ -1,6 +1,6 @@
 [
     {
-        "model": "strugglebus.post",
+        "model": "strugglebusapi.post",
         "pk": 1,
         "fields": {
             "bus": 5,

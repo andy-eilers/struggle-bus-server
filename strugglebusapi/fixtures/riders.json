@@ -1,13 +1,10 @@
 [
     {
-        "model": "auth.user",
+        "model": "strugglebusapi.rider",
         "pk": 1,
         "fields": {
-            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
-            "username": "FatAndy",
-            "first_name": "Andy",
-            "last_name": "Eilers",
-            "email": "me@me.com"
+            "user": 1,
+            "bio": "Struggling on by"
         }
     }
 ]

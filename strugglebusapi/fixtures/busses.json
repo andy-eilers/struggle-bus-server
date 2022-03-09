@@ -1,34 +1,34 @@
 [
     {
-        "model": "strugglebus.bus",
+        "model": "strugglebusapi.bus",
         "pk": 1,
         "fields": {
             "label": "Economy Van"
         }
     },
     {
-        "model": "strugglebus.bus",
+        "model": "strugglebusapi.bus",
         "pk": 2,
         "fields": {
             "label": "Shuttle Bus"
         }
     },
     {
-        "model": "strugglebus.bus",
+        "model": "strugglebusapi.bus",
         "pk": 3,
         "fields": {
             "label": "Trolley Car"
         }
     },
     {
-        "model": "strugglebus.bus",
+        "model": "strugglebusapi.bus",
         "pk": 4,
         "fields": {
             "label": "School Bus"
         }
     },
     {
-        "model": "strugglebus.bus",
+        "model": "strugglebusapi.bus",
         "pk": 5,
         "fields": {
             "label": "Double Decker"
