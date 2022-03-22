@@ -3,3 +3,4 @@ from .bus import BusView
 from .struggle import StruggleView
 from .rider import RiderView
 from .post import PostView
+from .comment import CommentView

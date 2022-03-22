@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
-from strugglebusapi.views import register_user, login_user, BusView, RiderView, PostView, StruggleView
+from strugglebusapi.views import register_user, login_user, BusView, RiderView, PostView, StruggleView, CommentView
 from rest_framework import routers
 from django.contrib import admin
 from django.urls import path
@@ -11,6 +11,7 @@ router.register(r'busses', BusView, 'bus')
 router.register(r'posts', PostView, 'post')
 router.register(r'riders', RiderView, 'rider')
 router.register(r'struggles', StruggleView, 'struggle')
+router.register(r'comments', CommentView, 'comment')
 
 urlpatterns = [
     path('register', register_user),

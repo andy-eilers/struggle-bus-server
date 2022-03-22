@@ -2,30 +2,30 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from strugglebusapi.models import Post, Bus, Rider, Struggle
+from strugglebusapi.models import Comment, Rider
 from django.core.exceptions import ValidationError
 
-class PostView(ViewSet):
+class CommentView(ViewSet):
     
     def retrieve(self, request, pk):
         try:
-            post = Post.objects.get(pk=pk)
-            serializer = PostSerializer(post)
+            comment = Comment.objects.get(pk=pk)
+            serializer = CommentSerializer(comment)
             return Response(serializer.data)
-        except Post.DoesNotExist as ex:
+        except Comment.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
         
     def list(self, request):
-        post = Post.objects.all()
-        serializer = PostSerializer(post, many=True)
-        return Response(serializer.data)
+            comment = Comment.objects.all()
+            serializer = CommentSerializer(comment, many=True)
+            return Response(serializer.data)
     
     def create(self, request):
         data = request.data
         rider = Rider.objects.get(user=request.auth.user)
         data['rider'] = rider.id
         try:
-            serializer = CreatePostSerializer(data=data)
+            serializer = CreateCommentSerializer(data=data)
             serializer.is_valid(raise_exception=True)
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -33,28 +33,28 @@ class PostView(ViewSet):
             return Response({'message': ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
         
     def destroy(self, request, pk):
-        post = Post.objects.get(pk=pk)
-        post.delete()
+        comment = Comment.objects.get(pk=pk)
+        comment.delete()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
     
     def update(self, request, pk):
         try:
-            post = Post.objects.get(pk=pk)
-            serializer = CreatePostSerializer(post, data=request.data)
+            comment = Comment.objects.get(pk=pk)
+            serializer = CreateCommentSerializer(comment, data=request.data)
             serializer.is_valid(raise_exception=True)
-            post = serializer.save()
+            comment = serializer.save()
             return Response(None, status=status.HTTP_204_NO_CONTENT)
         except ValidationError as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)    
     
     
-class PostSerializer(serializers.ModelSerializer):
+class CommentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Post
-        depth = 2
-        fields = ('id', 'rider', 'title', 'bus', 'struggle', 'description', 'date', 'comment_set')
+        model = Comment
+        depth = 1
+        fields = ('id', 'rider', 'post', 'body', 'date')
         
-class CreatePostSerializer(serializers.ModelSerializer):
+class CreateCommentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Post
-        fields = ('id', 'rider', 'title', 'bus', 'struggle', 'description', 'date')
+        model = Comment
+        fields = ('id', 'rider', 'post', 'body', 'date')

@@ -3,7 +3,10 @@
         "model": "strugglebusapi.post",
         "pk": 1,
         "fields": {
+            "rider": 1,
+            "title": "Bad news, bro",
             "bus": 5,
+            "struggle": [1, 6],
             "description": "Have you watched the news lately!?!",
             "date": "2022-03-08"
         }

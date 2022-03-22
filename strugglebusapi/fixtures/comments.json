@@ -1,0 +1,12 @@
+[
+    {
+        "model": "strugglebusapi.comment",
+        "pk": 1,
+        "fields": {
+            "rider": 4,
+            "post": 3,
+            "body": "That's so sketch",
+            "date": "2022-03-08"
+        }
+    }
+]
